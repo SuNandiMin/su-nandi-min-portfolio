@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Su Nandi Min — NCC Level 5 Diploma in Computing</title>
+<meta name="description" content="NCC Education Level 5 Diploma in Computing — Statement of Results for Su Nandi Min.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f17;--bg2:#111827;--card:#151d2b;--border:#1f2a3d;
+  --text:#e5e9f0;--muted:#8b98ad;--accent:#22d3ee;--accent2:#a78bfa;
+  --grad:linear-gradient(135deg,#22d3ee,#a78bfa);
+  --nav-bg:rgba(11,15,23,.85);--btn-text:#0b0f17;
+  --glow1:rgba(34,211,238,.12);--glow2:rgba(167,139,250,.10);
+  --dist:#22d3ee;--merit:#a78bfa;
+}
+[data-theme="light"]{
+  --bg:#f6f8fb;--bg2:#eef1f6;--card:#ffffff;--border:#dde3ec;
+  --text:#1a2332;--muted:#5b6a80;--accent:#0891b2;--accent2:#7c3aed;
+  --grad:linear-gradient(135deg,#0891b2,#7c3aed);
+  --nav-bg:rgba(246,248,251,.85);--btn-text:#ffffff;
+  --glow1:rgba(8,145,178,.10);--glow2:rgba(124,58,237,.08);
+  --dist:#0891b2;--merit:#7c3aed;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;transition:background .3s,color .3s}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:1.05rem}
+.logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.back{color:var(--muted);font-size:.92rem;font-weight:500;transition:color .2s}
+.back:hover{color:var(--text)}
+.theme-toggle{background:var(--bg2);border:1px solid var(--border);color:var(--text);border-radius:999px;width:40px;height:40px;font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,transform .2s}
+.theme-toggle:hover{border-color:var(--accent);transform:rotate(15deg)}
+header.top{padding:64px 0 20px;position:relative;overflow:hidden}
+header.top::before{content:'';position:absolute;top:-150px;right:-100px;width:420px;height:420px;background:radial-gradient(circle,var(--glow1),transparent 70%);pointer-events:none}
+.kicker{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.9rem;margin-bottom:12px}
+h1{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:800;line-height:1.15;margin-bottom:10px}
+h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:var(--muted);font-size:1.05rem}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:32px 0}
+.meta{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px}
+.meta span{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;font-family:'JetBrains Mono',monospace;margin-bottom:3px}
+.meta b{font-size:.98rem;font-weight:600}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:8px;margin-bottom:24px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+thead th{text-align:left;color:var(--accent2);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;font-family:'JetBrains Mono',monospace;padding:14px 14px;border-bottom:1px solid var(--border)}
+tbody td{padding:13px 14px;border-bottom:1px solid var(--border);color:var(--muted)}
+tbody tr:last-child td{border-bottom:none}
+.unit-name{color:var(--text);font-weight:600}
+.pill{display:inline-block;border-radius:999px;padding:3px 12px;font-size:.76rem;font-weight:700;font-family:'JetBrains Mono',monospace}
+.pill.dist{background:rgba(34,211,238,.14);color:var(--dist)}
+.pill.merit{background:rgba(167,139,250,.16);color:var(--merit)}
+.mark{color:var(--text);font-weight:700;font-family:'JetBrains Mono',monospace}
+h2{font-size:1.3rem;font-weight:700;margin:40px 0 6px}
+h2::before{content:'# ';color:var(--accent);font-family:'JetBrains Mono',monospace}
+.note{color:var(--muted);font-size:.85rem;margin-bottom:20px}
+.grade-scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.gs{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.gs b{font-size:.95rem}
+.gs .rng{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.82rem;margin-left:6px}
+.gs p{color:var(--muted);font-size:.82rem;margin-top:6px}
+.framework{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-top:14px}
+.framework p{color:var(--muted);font-size:.92rem}
+.framework .hl{color:var(--text);font-weight:600}
+footer{border-top:1px solid var(--border);padding:26px 0;text-align:center;color:var(--muted);font-size:.85rem;margin-top:48px}
+.official{color:var(--muted);font-size:.8rem;font-style:italic;margin-top:8px}
+</style>
+</head>
+<body>
+
+<nav><div class="container nav-inner">
+  <div class="logo">su<span>.</span>nandi<span>.</span>min</div>
+  <div class="nav-right">
+    <a class="back" href="index.html">← Back to portfolio</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
+  </div>
+</div></nav>
+
+<header class="top"><div class="container">
+  <p class="kicker">Statement of Results</p>
+  <h1>NCC Education <span class="grad">Level 5 Diploma in Computing</span></h1>
+  <p class="subtitle">Equivalent to Year 2 of a UK Honours degree (DipHE) · V3.00, Jan 2024</p>
+  <div class="meta-grid">
+    <div class="meta"><span>Candidate</span><b>Su Nandi Min</b></div>
+    <div class="meta"><span>NCC Education ID</span><b>209302</b></div>
+    <div class="meta"><span>Centre</span><b>Twinkle College — LUN001, Myanmar</b></div>
+    <div class="meta"><span>Exam Session</span><b>Summer 2026 (653565)</b></div>
+  </div>
+</div></header>
+
+<main class="container">
+
+  <div class="card">
+    <table>
+      <thead><tr>
+        <th>Unit</th><th>Level</th><th>Credits</th><th>Unit Mark</th><th>Grade</th><th>Date</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="unit-name">Agile Development</td><td>L5</td><td>20</td><td class="mark">80</td><td><span class="pill dist">Distinction</span></td><td>Apr 2026</td></tr>
+        <tr><td class="unit-name">Data Analysis &amp; Visualisation with Python</td><td>L5</td><td>20</td><td class="mark">82</td><td><span class="pill dist">Distinction</span></td><td>Apr 2026</td></tr>
+        <tr><td class="unit-name">Network Security &amp; Cryptography</td><td>L5</td><td>20</td><td class="mark">74</td><td><span class="pill dist">Distinction</span></td><td>Apr 2026</td></tr>
+        <tr><td class="unit-name">Mobile App Development</td><td>L5</td><td>20</td><td class="mark">67</td><td><span class="pill merit">Merit</span></td><td>Jan 2026</td></tr>
+        <tr><td class="unit-name">Artificial Intelligence</td><td>L5</td><td>20</td><td class="mark">66</td><td><span class="pill merit">Merit</span></td><td>Jan 2026</td></tr>
+        <tr><td class="unit-name">Computing Project</td><td>L5</td><td>20</td><td class="mark">63</td><td><span class="pill merit">Merit</span></td><td>Jul 2026</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="official">Total: 120 credits at Level 5 · 3 Distinctions, 3 Merits. This page reproduces the official NCC Education Statement of Results; the original signed PDF is available on request.</p>
+
+  <h2>Grading Structure</h2>
+  <p class="note">How NCC Education grades map to marks.</p>
+  <div class="grade-scale">
+    <div class="gs"><b>Distinction</b><span class="rng">70–100</span><p>Outstanding performance, satisfying all learning outcomes and significantly exceeding a number of them.</p></div>
+    <div class="gs"><b>Merit</b><span class="rng">60–69</span><p>Strong performance, satisfying all learning outcomes and exceeding a number of them.</p></div>
+    <div class="gs"><b>Pass</b><span class="rng">40–59</span><p>Competent performance, satisfying all learning outcomes.</p></div>
+    <div class="gs"><b>Fail</b><span class="rng">0–39</span><p>Did not satisfy all of the learning outcomes.</p></div>
+  </div>
+
+  <h2>Framework</h2>
+  <div class="framework">
+    <p>The <span class="hl">NCC Education Level 5 Diploma in Computing</span> sits at <span class="hl">Level 5</span> on the Ofqual Qualifications and Credit Framework (QCF), equivalent to <span class="hl">Year 2 of a UK Honours degree (DipHE)</span> under the Framework for Higher Education Qualifications (FHEQ).</p>
+  </div>
+
+</main>
+
+<footer><div class="container">© 2026 Su Nandi Min · NCC Education ID 209302 · Bagan, Myanmar</div></footer>
+
+<script>
+const toggle=document.getElementById('themeToggle');
+const root=document.documentElement;
+function setTheme(t){
+  root.setAttribute('data-theme',t);
+  toggle.textContent=t==='light'?'☀️':'🌙';
+  try{localStorage.setItem('theme',t)}catch(e){}
+}
+let saved=null;
+try{saved=localStorage.getItem('theme')}catch(e){}
+setTheme(saved||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+toggle.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+</script>
+</body>
+</html>
