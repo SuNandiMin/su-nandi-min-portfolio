@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConceptX LMS &amp; SMS — Case Study · Su Nandi Min</title>
+<meta name="description" content="Case study: Su Nandi Min's backend work on ConceptX, a production Learning Management and School Management platform built with Laravel, PHP and MySQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+<nav><div class="container nav-inner">
+  <a class="logo" href="index.html">su<span>.</span>nandi<span>.</span>min</a>
+  <div class="nav-right">
+    <a class="back" href="index.html#projects">← Back to projects</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
+  </div>
+</div></nav>
+
+<header class="top"><div class="container">
+  <p class="kicker">Case study · Production project</p>
+  <h1>ConceptX <span class="grad">LMS &amp; School Management System</span></h1>
+  <p class="lede">A production platform that schools use every day for learning, assessment, attendance, administration, inventory and reporting. One Laravel REST API serves a Vue.js web app, a React Native mobile app for guardians and instructors, and an admin panel.</p>
+  <div class="btns">
+    <a class="btn btn-primary" href="https://app.conceptxmm.com" target="_blank" rel="noopener">Live platform ↗</a>
+    <a class="btn btn-outline" href="index.html#contact">Discuss this project</a>
+  </div>
+  <div class="meta-grid">
+    <div class="meta"><span>Role</span><b>Backend Developer</b></div>
+    <div class="meta"><span>Duration</span><b>Jan 2023 — Present</b></div>
+    <div class="meta"><span>Backend</span><b>Laravel · PHP 8 · MySQL · Passport</b></div>
+    <div class="meta"><span>Clients</span><b>Vue.js web · React Native mobile</b></div>
+  </div>
+</div></header>
+
+<main class="container">
+
+  <section>
+    <div class="metrics">
+      <div class="metric"><b>1,100+</b><span>commits I've made to the current backend — the 2nd most active of 24 contributors</span></div>
+      <div class="metric"><b>3+ yrs</b><span>on the platform: the original Laravel 8 LMS, then the new Laravel 11 system</span></div>
+      <div class="metric"><b>280+</b><span>Eloquent models in the backend I work in</span></div>
+      <div class="metric"><b>370+</b><span>automated test files that CI runs before every deploy</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Overview</h2>
+    <div class="prose">
+      <p>ConceptX started as a <b>Learning Management System</b> (courses, content, exams) and grew into a full <b>School Management System</b>. I joined in January 2023 and worked on the original Laravel 8 LMS. Since mid-2024 I've worked on its successor, an API-only <b>Laravel 11</b> backend with versioned REST endpoints under <code class="mono">/api/v1</code>.</p>
+      <p>Most of my work is on the backend: turning school requirements into database structures, APIs and permission rules that the web app, the mobile app and the admin panel all share.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Platform Modules</h2>
+    <p class="note">The areas the platform covers, described in general terms. I've built and maintained features across most of them.</p>
+    <div class="card-grid">
+      <div class="feature"><h3>Learning management</h3><p>Courses, lessons and content, assignments and assessments.</p></div>
+      <div class="feature"><h3>School management</h3><p>Schools, campuses, classrooms, sections, intakes and timetables.</p></div>
+      <div class="feature"><h3>Attendance</h3><p>Daily attendance with check-in / check-out tracking.</p></div>
+      <div class="feature"><h3>Grading &amp; report cards</h3><p>Evaluation weights, grading, report cards and student conduct.</p></div>
+      <div class="feature"><h3>Communication</h3><p>Announcements, staff messaging, push and email notifications.</p></div>
+      <div class="feature"><h3>Fees &amp; payments</h3><p>Invoicing and payment transactions.</p></div>
+      <div class="feature"><h3>Inventory</h3><p>Products, warehouses, stock, and purchase and sales orders.</p></div>
+      <div class="feature"><h3>Reporting</h3><p>Dashboards and cached reports.</p></div>
+      <div class="feature"><h3>Roles &amp; permissions</h3><p>School-level roles, permission modules and policy-based access control.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>My Responsibilities</h2>
+    <ul class="check-list">
+      <li><b>Database design</b> — design tables, relationships and naming conventions from business requirements.</li>
+      <li><b>REST APIs</b> — design and build versioned endpoints for the web app and the mobile app.</li>
+      <li><b>Auth &amp; permissions</b> — Passport authentication, school roles and Laravel Policies.</li>
+      <li><b>Feature development</b> — across LMS, school management, attendance, assessment, inventory and reporting.</li>
+      <li><b>Performance</b> — find slow endpoints and optimize their queries and response payloads.</li>
+      <li><b>Testing</b> — unit, feature, integration, end-to-end and regression testing.</li>
+      <li><b>Feature planning</b> — lead technical discussions and plan the implementation approach with the team.</li>
+      <li><b>Mentoring</b> — explain approaches to junior developers and assign their tasks.</li>
+      <li><b>Operations</b> — maintain servers and support deployments and production issues.</li>
+      <li><b>Documentation &amp; training</b> — write technical docs and train users on the system.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>From Requirement to Production</h2>
+    <p class="note">How I take a feature from a request to a live release.</p>
+    <ol class="flow">
+      <li><b>Business requirements</b><small>Clarify the school's workflow, the users involved and the edge cases.</small></li>
+      <li><b>Feature planning</b><small>Agree the approach with the team and split the work into tasks.</small></li>
+      <li><b>Database design</b><small>Tables, relationships, constraints and indexes.</small></li>
+      <li><b>REST API development</b><small>Routes, Form Request validation, policies, services and API Resources.</small></li>
+      <li><b>Frontend integration</b><small>Agree the response contract with the web and mobile developers.</small></li>
+      <li><b>Testing</b><small>Unit and feature tests, then integration, E2E and regression checks.</small></li>
+      <li><b>Deployment</b><small>CI runs the test suite, then deploys and runs migrations.</small></li>
+      <li><b>Documentation</b><small>Technical notes for the team and user training.</small></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>System Architecture</h2>
+    <p class="note">A general view of the platform with no confidential details. The same API and authorization rules serve every client.</p>
+    <div class="arch">
+      <div class="tier"><div class="tier-label">Clients</div><div class="nodes">
+        <div class="node"><b>Web app</b><small>Vue 3 · Vue Router · Vuex · Tailwind CSS</small></div>
+        <div class="node"><b>Mobile app</b><small>React Native · Expo · TypeScript</small></div>
+        <div class="node"><b>Admin panel</b><small>Filament (Laravel)</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span>HTTPS · JSON · OAuth2 bearer tokens · /api/v1</span></div>
+      <div class="tier"><div class="tier-label">Laravel API</div><div class="nodes">
+        <div class="node"><b>Auth &amp; middleware</b><small>Laravel Passport</small></div>
+        <div class="node"><b>Validation</b><small>Form Requests</small></div>
+        <div class="node hl"><b>Authorization</b><small>School roles · Policies · Gates</small></div>
+        <div class="node"><b>Controllers → Services</b><small>Business logic in a service layer</small></div>
+        <div class="node"><b>API Resources</b><small>Consistent JSON responses</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span></span></div>
+      <div class="tier"><div class="tier-label">Async &amp; real-time</div><div class="nodes">
+        <div class="node"><b>Queued jobs</b><small>Background processing</small></div>
+        <div class="node"><b>Scheduler</b><small>Recurring tasks</small></div>
+        <div class="node"><b>WebSockets</b><small>Laravel Reverb broadcasting</small></div>
+        <div class="node"><b>Notifications</b><small>Push (FCM) and email</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span></span></div>
+      <div class="tier"><div class="tier-label">Data &amp; storage</div><div class="nodes">
+        <div class="node hl"><b>MySQL</b><small>Primary relational database</small></div>
+        <div class="node"><b>Redis</b><small>Fast key-value data</small></div>
+        <div class="node"><b>Object storage</b><small>S3-compatible file storage</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span>release pipeline</span></div>
+      <div class="tier"><div class="tier-label">Delivery</div><div class="nodes">
+        <div class="node"><b>GitHub Actions CI/CD</b><small>Tests → DB backup → migrations → config caching → worker restart</small></div>
+        <div class="node"><b>Linux server</b><small>Background workers managed by Supervisor</small></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Engineering Decisions</h2>
+    <p class="note">Real problems from my work on the platform, described in general terms.</p>
+    <div class="decisions">
+
+      <article class="decision">
+        <h3>1 · Permissions for a school with many kinds of users</h3>
+        <dl>
+          <dt>Problem</dt><dd>One school has administrators, staff in different positions and departments, instructors, students and guardians. They all touch the same classrooms, attendance, assignments and grades, but each needs different access.</dd>
+          <dt>Approach</dt><dd>Store school-level roles and permission modules as data, and enforce them through one Laravel Policy per resource instead of scattering checks across controllers.</dd>
+          <dt>Challenge</dt><dd>Some access comes from a relationship, not a role. A guardian should see their own child's classes without holding a staff permission.</dd>
+          <dt>Solution</dt><dd>Policies combine role permissions with membership checks, so membership grants view access where it should. I've built and maintained policies for attendance, classrooms, assignments and answers, forms, evaluation weights and lectures, and added permission logging to make access issues easier to trace.</dd>
+          <dt>Result</dt><dd>Each resource has its access rules in one place, and the same rules apply to the web app, the mobile app and the admin panel.</dd>
+        </dl>
+      </article>
+
+      <article class="decision">
+        <h3>2 · Speeding up heavy list endpoints</h3>
+        <dl>
+          <dt>Problem</dt><dd>Frequently used list endpoints (schools, users, profiles, form submissions) ran nested relationship queries and returned more related data than the screens needed.</dd>
+          <dt>Investigation</dt><dd>Reviewed the queries each endpoint generated and compared the API Resource output with what the web and mobile screens actually used.</dd>
+          <dt>Solution</dt><dd>Replaced nested <code>whereHas</code> chains with <code>whereIn</code> subqueries, limited eager loading to the relations and columns needed, used <code>withCount</code> instead of loading whole collections, and removed unneeded fields from the API Resources.</dd>
+          <dt>Result</dt><dd>Less database work per request and smaller responses on some of the platform's most-used screens.</dd>
+        </dl>
+      </article>
+
+      <article class="decision">
+        <h3>3 · Shipping safely to a live system</h3>
+        <dl>
+          <dt>Problem</dt><dd>Schools use the platform daily. A broken migration or a regression affects real students and staff straight away.</dd>
+          <dt>Approach</dt><dd>Test at several levels before release, and make deployment a repeatable pipeline rather than a manual process.</dd>
+          <dt>Implementation</dt><dd>I test features at unit, feature, integration, end-to-end and regression level. The CI pipeline runs the test suite against MySQL, backs up the database, runs migrations, rebuilds caches and restarts the queue and WebSocket workers.</dd>
+          <dt>Result</dt><dd>Every change reaches production through the same tested path, with a backup taken before the schema changes.</dd>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="callout">ConceptX is a live commercial product. This page covers my role and the general architecture only: no source code, client data or internal details. The figures above are counted from the codebase I work in.</div>
+  </section>
+
+  <div class="pager">
+    <a class="btn btn-outline" href="index.html#projects">← All projects</a>
+    <a class="btn btn-outline" href="dhamma-sphere.html">Dhamma Sphere case study →</a>
+  </div>
+
+</main>
+
+<footer><div class="container">© 2026 Su Nandi Min · Backend Software Engineer</div></footer>
+
+<script>
+const toggle=document.getElementById('themeToggle');
+const root=document.documentElement;
+function setTheme(t){
+  root.setAttribute('data-theme',t);
+  toggle.textContent=t==='light'?'☀️':'🌙';
+  try{localStorage.setItem('theme',t)}catch(e){}
+}
+let saved=null;
+try{saved=localStorage.getItem('theme')}catch(e){}
+setTheme(saved||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+toggle.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+</script>
+</body>
+</html>

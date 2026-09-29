@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhamma Sphere — Case Study · Su Nandi Min</title>
+<meta name="description" content="Case study: Dhamma Sphere, a full-stack Vue 3 + Laravel 12 platform designed and built by Su Nandi Min — database design, REST API architecture and engineering decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+<nav><div class="container nav-inner">
+  <a class="logo" href="index.html">su<span>.</span>nandi<span>.</span>min</a>
+  <div class="nav-right">
+    <a class="back" href="index.html#projects">← Back to projects</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
+  </div>
+</div></nav>
+
+<header class="top"><div class="container">
+  <p class="kicker">Case study · Personal full-stack project</p>
+  <h1>Dhamma <span class="grad">Sphere</span></h1>
+  <p class="lede">A Buddhist learning and community platform: a doctrine library with AI translation, a social feed with threaded discussions, and a book marketplace where authors and publishers sell to readers. I designed and built it end to end — the database, the REST API and the Vue frontend.</p>
+  <div class="btns">
+    <a class="btn btn-primary" href="https://github.com/SuNandiMin/dhamma-sphere-backend" target="_blank" rel="noopener">Backend code ↗</a>
+    <a class="btn btn-outline" href="https://github.com/SuNandiMin/dhamma-sphere" target="_blank" rel="noopener">Frontend code ↗</a>
+  </div>
+  <div class="meta-grid">
+    <div class="meta"><span>Role</span><b>Solo developer — design, API &amp; UI</b></div>
+    <div class="meta"><span>Year</span><b>2026</b></div>
+    <div class="meta"><span>Backend</span><b>Laravel 12 · PHP 8.2 · MySQL</b></div>
+    <div class="meta"><span>Frontend</span><b>Vue 3 · Pinia · Tailwind CSS</b></div>
+  </div>
+</div></header>
+
+<main class="container">
+
+  <section>
+    <div class="metrics">
+      <div class="metric"><b>11</b><span>domain tables, designed from scratch</span></div>
+      <div class="metric"><b>9</b><span>service classes holding the business logic</span></div>
+      <div class="metric"><b>17</b><span>Form Request classes for validation</span></div>
+      <div class="metric"><b>10</b><span>API Resources shaping every response</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Overview</h2>
+    <div class="prose">
+      <p>ConceptX is professional work whose code I can't share. Dhamma Sphere is the project where you can read every line: a <b>Vue 3 single-page app</b> talking to a <b>versioned Laravel REST API</b>, secured with <b>Laravel Passport</b> bearer tokens and backed by a <b>MySQL</b> schema I designed around three areas — the doctrine library, the community feed and the marketplace.</p>
+      <p>Readers browse and discuss teachings; authors and publishers also get a shop where they list books, manage stock and see their sales.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <div class="stack">
+      <div class="stack-row"><span>Frontend</span><div class="tags"><span class="tag">Vue 3</span><span class="tag">Pinia</span><span class="tag">Vue Router</span><span class="tag">Tailwind CSS</span><span class="tag">Vite</span><span class="tag">Axios</span></div></div>
+      <div class="stack-row"><span>Backend</span><div class="tags"><span class="tag">Laravel 12</span><span class="tag">PHP 8.2</span><span class="tag">REST API /api/v1</span><span class="tag">Service layer</span></div></div>
+      <div class="stack-row"><span>Database</span><div class="tags"><span class="tag">MySQL</span><span class="tag">Eloquent ORM</span><span class="tag">Migrations</span></div></div>
+      <div class="stack-row"><span>Auth</span><div class="tags"><span class="tag">Laravel Passport (OAuth2)</span><span class="tag">Role middleware</span><span class="tag">Route guards</span></div></div>
+      <div class="stack-row"><span>AI</span><div class="tags"><span class="tag">OpenAI API</span><span class="tag">gpt-4.1-mini</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Features</h2>
+    <p class="note">What the application does today.</p>
+    <div class="card-grid">
+      <div class="feature"><h3>Authentication</h3><p>Register, login, logout and "me" endpoints using Passport access tokens. The Vue router blocks guest-only and protected pages.</p></div>
+      <div class="feature"><h3>User roles</h3><p>Three roles — user, author and publisher. A custom <code class="mono">role:</code> middleware protects the seller-only API routes.</p></div>
+      <div class="feature"><h3>Doctrine library</h3><p>A paginated library of teachings with keyword search across title, topic and content.</p></div>
+      <div class="feature"><h3>AI translation &amp; suggestions</h3><p>OpenAI-powered translation of teachings. When a search finds nothing, the AI suggests related teachings.</p></div>
+      <div class="feature"><h3>Posts &amp; sharing</h3><p>A community feed. Posts can link to a teaching and track share counts.</p></div>
+      <div class="feature"><h3>Nested comments</h3><p>Replies to comments through a self-referencing <code class="mono">parent_id</code>, shown as a thread under each comment.</p></div>
+      <div class="feature"><h3>Likes</h3><p>One like per user per post, enforced by the database, with a stored counter for fast feeds.</p></div>
+      <div class="feature"><h3>Book shop</h3><p>Authors and publishers create a shop profile, list books and manage stock.</p></div>
+      <div class="feature"><h3>Cart</h3><p>A Pinia store saved to localStorage, so the cart survives page reloads.</p></div>
+      <div class="feature"><h3>Checkout &amp; orders</h3><p>A transactional checkout that locks stock rows, so the same copy can't be sold twice.</p></div>
+      <div class="feature"><h3>Payments</h3><p>Payment methods are stored as data, and every order gets a payment record. The gateway is simulated for now; cash on delivery leaves the order unpaid.</p></div>
+      <div class="feature"><h3>Seller analytics</h3><p>Revenue, units sold and orders for each shop.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Database Design</h2>
+    <p class="note">The schema I designed, taken from the project's migrations. Each arrow runs from a foreign key to the table it references. Passport's <code class="mono">oauth_*</code> tables are left out.</p>
+    <div class="er" role="img" aria-label="Entity relationship diagram of the Dhamma Sphere database: users at the centre; posts, comments and post_likes on the community side; shop_profiles, books, orders, order_items, payments and payment_methods on the marketplace side.">
+      <svg viewBox="0 0 970 680" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="fk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path class="er-arrow" d="M0,0 L10,5 L0,10 z"/>
+          </marker>
+        </defs>
+
+        <!-- relationships (drawn first so boxes sit on top) -->
+        <g marker-end="url(#fk)">
+          <path class="er-link" d="M145,150 L145,108"/>
+          <path class="er-link" d="M250,215 L385,300"/>
+          <path class="er-link" d="M145,300 L145,256"/>
+          <path class="er-link" d="M250,365 L385,330"/>
+          <path class="er-link" d="M40,393 C8,393 8,357 40,357"/>
+          <path class="er-link" d="M385,164 L250,185"/>
+          <path class="er-link" d="M490,208 L490,270"/>
+          <path class="er-link" d="M730,55 L595,285"/>
+          <path class="er-link" d="M730,200 L595,305"/>
+          <path class="er-link" d="M835,130 L835,90"/>
+          <path class="er-link" d="M835,290 L835,254"/>
+          <path class="er-link" d="M835,396 L835,430"/>
+          <path class="er-link" d="M730,480 L595,340"/>
+          <path class="er-link" d="M835,570 L835,536"/>
+          <path class="er-link" d="M730,614 L595,614"/>
+        </g>
+
+        <!-- doctrines -->
+        <rect class="er-box" x="40" y="20" width="210" height="88" rx="8"/>
+        <text class="er-title" x="52" y="38">doctrines</text>
+        <line class="er-div" x1="40" y1="46" x2="250" y2="46"/>
+        <text class="er-row" x="52" y="59">id</text>
+        <text class="er-row" x="52" y="77">topic<tspan class="ann"> indexed</tspan></text>
+        <text class="er-row" x="52" y="95">language<tspan class="ann"> indexed</tspan></text>
+
+        <!-- posts -->
+        <rect class="er-box" x="40" y="150" width="210" height="106" rx="8"/>
+        <text class="er-title" x="52" y="168">posts</text>
+        <line class="er-div" x1="40" y1="176" x2="250" y2="176"/>
+        <text class="er-row" x="52" y="189">id</text>
+        <text class="er-row" x="52" y="207">user_id<tspan class="ann"> → users</tspan></text>
+        <text class="er-row" x="52" y="225">doctrine_id<tspan class="ann"> → doctrines</tspan></text>
+        <text class="er-row" x="52" y="243">likes_count, shares_count</text>
+
+        <!-- comments -->
+        <rect class="er-box" x="40" y="300" width="210" height="106" rx="8"/>
+        <text class="er-title" x="52" y="318">comments</text>
+        <line class="er-div" x1="40" y1="326" x2="250" y2="326"/>
+        <text class="er-row" x="52" y="339">id</text>
+        <text class="er-row" x="52" y="357">post_id<tspan class="ann"> → posts</tspan></text>
+        <text class="er-row" x="52" y="375">user_id<tspan class="ann"> → users</tspan></text>
+        <text class="er-row" x="52" y="393">parent_id<tspan class="ann"> → comments</tspan></text>
+
+        <!-- post_likes -->
+        <rect class="er-box" x="385" y="120" width="210" height="88" rx="8"/>
+        <text class="er-title" x="397" y="138">post_likes</text>
+        <line class="er-div" x1="385" y1="146" x2="595" y2="146"/>
+        <text class="er-row" x="397" y="159">post_id<tspan class="ann"> → posts</tspan></text>
+        <text class="er-row" x="397" y="177">user_id<tspan class="ann"> → users</tspan></text>
+        <text class="er-row" x="397" y="195"><tspan class="ann">unique</tspan>(post_id, user_id)</text>
+
+        <!-- users -->
+        <rect class="er-box" x="385" y="270" width="210" height="88" rx="8"/>
+        <text class="er-title" x="397" y="288">users</text>
+        <line class="er-div" x1="385" y1="296" x2="595" y2="296"/>
+        <text class="er-row" x="397" y="309">id</text>
+        <text class="er-row" x="397" y="327">email<tspan class="ann"> unique</tspan></text>
+        <text class="er-row" x="397" y="345">role<tspan class="ann"> user·author·publisher</tspan></text>
+
+        <!-- payment_methods -->
+        <rect class="er-box" x="385" y="570" width="210" height="88" rx="8"/>
+        <text class="er-title" x="397" y="588">payment_methods</text>
+        <line class="er-div" x1="385" y1="596" x2="595" y2="596"/>
+        <text class="er-row" x="397" y="609">id</text>
+        <text class="er-row" x="397" y="627">code<tspan class="ann"> unique</tspan></text>
+        <text class="er-row" x="397" y="645">provider, mode, config</text>
+
+        <!-- shop_profiles -->
+        <rect class="er-box" x="730" y="20" width="210" height="70" rx="8"/>
+        <text class="er-title" x="742" y="38">shop_profiles</text>
+        <line class="er-div" x1="730" y1="46" x2="940" y2="46"/>
+        <text class="er-row" x="742" y="59">id</text>
+        <text class="er-row" x="742" y="77">user_id<tspan class="ann"> → users, unique</tspan></text>
+
+        <!-- books -->
+        <rect class="er-box" x="730" y="130" width="210" height="124" rx="8"/>
+        <text class="er-title" x="742" y="148">books</text>
+        <line class="er-div" x1="730" y1="156" x2="940" y2="156"/>
+        <text class="er-row" x="742" y="169">id</text>
+        <text class="er-row" x="742" y="187">seller_id<tspan class="ann"> → users</tspan></text>
+        <text class="er-row" x="742" y="205">shop_profile_id<tspan class="ann"> nullable</tspan></text>
+        <text class="er-row" x="742" y="223">category<tspan class="ann"> indexed</tspan></text>
+        <text class="er-row" x="742" y="241">price, stock</text>
+
+        <!-- order_items -->
+        <rect class="er-box" x="730" y="290" width="210" height="106" rx="8"/>
+        <text class="er-title" x="742" y="308">order_items</text>
+        <line class="er-div" x1="730" y1="316" x2="940" y2="316"/>
+        <text class="er-row" x="742" y="329">order_id<tspan class="ann"> → orders</tspan></text>
+        <text class="er-row" x="742" y="347">book_id<tspan class="ann"> → books, null</tspan></text>
+        <text class="er-row" x="742" y="365">title, price<tspan class="ann"> snapshot</tspan></text>
+        <text class="er-row" x="742" y="383">quantity</text>
+
+        <!-- orders -->
+        <rect class="er-box" x="730" y="430" width="210" height="106" rx="8"/>
+        <text class="er-title" x="742" y="448">orders</text>
+        <line class="er-div" x1="730" y1="456" x2="940" y2="456"/>
+        <text class="er-row" x="742" y="469">id</text>
+        <text class="er-row" x="742" y="487">user_id<tspan class="ann"> → users</tspan></text>
+        <text class="er-row" x="742" y="505">order_number<tspan class="ann"> unique</tspan></text>
+        <text class="er-row" x="742" y="523">status, total</text>
+
+        <!-- payments -->
+        <rect class="er-box" x="730" y="570" width="210" height="88" rx="8"/>
+        <text class="er-title" x="742" y="588">payments</text>
+        <line class="er-div" x1="730" y1="596" x2="940" y2="596"/>
+        <text class="er-row" x="742" y="609">order_id<tspan class="ann"> → orders</tspan></text>
+        <text class="er-row" x="742" y="627">payment_method_id<tspan class="ann"> null</tspan></text>
+        <text class="er-row" x="742" y="645">status, amount</text>
+
+        <!-- legend -->
+        <text class="er-row" x="40" y="470"><tspan class="ann">LEGEND</tspan></text>
+        <path class="er-link" d="M40,494 L96,494" marker-end="url(#fk)"/>
+        <text class="er-row" x="108" y="498"><tspan class="ann">foreign key → referenced table</tspan></text>
+        <text class="er-row" x="40" y="524"><tspan class="ann">unique / indexed = DB constraint</tspan></text>
+        <text class="er-row" x="40" y="548"><tspan class="ann">snapshot = copied at checkout</tspan></text>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>API Architecture</h2>
+    <p class="note">How a request travels through the system. Controllers stay thin; business rules live in services; validation and response shape are handled in one place each.</p>
+    <div class="arch">
+      <div class="tier"><div class="tier-label">Client</div><div class="nodes">
+        <div class="node"><b>Vue 3 SPA</b><small>Vue Router guards (auth, guest, role) · Pinia stores for auth, cart and posts</small></div>
+        <div class="node"><b>Axios instance</b><small>Adds the Bearer token to every request</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span>HTTPS · JSON · /api/v1</span></div>
+      <div class="tier"><div class="tier-label">Middleware</div><div class="nodes">
+        <div class="node"><b>auth:api</b><small>Passport token guard</small></div>
+        <div class="node"><b>role:author,publisher</b><small>Custom EnsureRole middleware for seller routes</small></div>
+        <div class="node"><b>CORS</b><small>Configured in bootstrap/app.php</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span>validated input only</span></div>
+      <div class="tier"><div class="tier-label">Validation</div><div class="nodes">
+        <div class="node hl"><b>17 Form Requests → BaseRequest</b><small>Every validation failure returns the same 422 JSON shape</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span></span></div>
+      <div class="tier"><div class="tier-label">Controllers</div><div class="nodes">
+        <div class="node"><b>Api/V1 — Auth · Doctrine · Social · Marketplace</b><small>Thin controllers: receive the request, call a service, return a resource</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span></span></div>
+      <div class="tier"><div class="tier-label">Services</div><div class="nodes">
+        <div class="node hl"><b>Business logic</b><small>Auth · Post · Comment · Doctrine · Book · Shop · Order · PaymentMethod · AiTranslation</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span></span></div>
+      <div class="tier"><div class="tier-label">Data &amp; external</div><div class="nodes">
+        <div class="node"><b>MySQL via Eloquent</b><small>Transactions and row locks where consistency matters</small></div>
+        <div class="node"><b>OpenAI API</b><small>Called only through AiTranslationService</small></div>
+      </div></div>
+      <div class="arch-link"><div class="spacer"></div><span>response</span></div>
+      <div class="tier"><div class="tier-label">Response</div><div class="nodes">
+        <div class="node"><b>API Resources + ResponseHelper</b><small>{ status, message, code, data } plus pagination metadata when needed</small></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Engineering Decisions</h2>
+    <p class="note">The problems that shaped the design and how I solved each one.</p>
+    <div class="decisions">
+
+      <article class="decision">
+        <h3>1 · Preventing overselling at checkout</h3>
+        <dl>
+          <dt>Problem</dt><dd>Books have limited stock. If two buyers check out the last copy at the same moment, both requests could read "1 in stock" and both succeed.</dd>
+          <dt>Approach</dt><dd>Treat checkout as a single unit of work. Checking stock, decrementing it, and creating the order, its items and the payment record either all succeed or all roll back.</dd>
+          <dt>Implementation</dt><dd><code>OrderService::checkout</code> runs inside <code>DB::transaction()</code> and loads the ordered books with <code>lockForUpdate()</code>, so a second checkout waits for the first to commit. If stock is short, a validation error is thrown and the whole transaction rolls back.</dd>
+          <dt>Result</dt><dd>Stock can't go negative, and a failed checkout leaves no half-created orders.</dd>
+        </dl>
+<pre class="code"><code><span class="k">return</span> DB::transaction(<span class="k">function</span> () <span class="k">use</span> ($user, $data) {
+    $books = Book::whereIn(<span class="c">'id'</span>, collect($data[<span class="c">'items'</span>])-&gt;pluck(<span class="c">'id'</span>))
+        -&gt;lockForUpdate()          <span class="c">// concurrent checkouts wait here</span>
+        -&gt;get()-&gt;keyBy(<span class="c">'id'</span>);
+
+    <span class="k">foreach</span> ($data[<span class="c">'items'</span>] <span class="k">as</span> $item) {
+        $book = $books-&gt;get($item[<span class="c">'id'</span>]);
+        <span class="k">if</span> (! $book || $book-&gt;stock &lt; $item[<span class="c">'quantity'</span>]) {
+            <span class="k">throw</span> ValidationException::withMessages([...]);  <span class="c">// rolls everything back</span>
+        }
+        $book-&gt;decrement(<span class="c">'stock'</span>, $item[<span class="c">'quantity'</span>]);
+    }
+    <span class="c">// create order, order items (title/price snapshot) and payment record</span>
+});</code></pre>
+      </article>
+
+      <article class="decision">
+        <h3>2 · Keeping order history accurate</h3>
+        <dl>
+          <dt>Problem</dt><dd>Sellers can change prices or delete books after a sale. If orders only pointed at the live catalogue, past orders would silently change or break.</dd>
+          <dt>Approach</dt><dd>Record what was bought at the moment of purchase instead of relying on a reference alone.</dd>
+          <dt>Implementation</dt><dd><code>order_items</code> copies the title and price at checkout. <code>book_id</code> is nullable with <code>ON DELETE SET NULL</code>, and the order stores the customer's name, email and shipping address.</dd>
+          <dt>Result</dt><dd>Past orders stay correct when the catalogue changes or a book is removed.</dd>
+        </dl>
+      </article>
+
+      <article class="decision">
+        <h3>3 · One like per user, cheap to display</h3>
+        <dl>
+          <dt>Problem</dt><dd>Likes must never double-count, and the feed shouldn't count rows for every post on every page load.</dd>
+          <dt>Implementation</dt><dd>A <code>post_likes</code> table with a <code>unique(post_id, user_id)</code> constraint. <code>PostService::like</code> toggles the like and updates the stored <code>likes_count</code> in the same transaction.</dd>
+          <dt>Result</dt><dd>The database itself rejects duplicate likes, and the feed reads a stored counter instead of counting rows.</dd>
+        </dl>
+      </article>
+
+      <article class="decision">
+        <h3>4 · A predictable API contract</h3>
+        <dl>
+          <dt>Problem</dt><dd>Without conventions, each endpoint returns data and errors in a slightly different shape, and the frontend fills up with special cases.</dd>
+          <dt>Implementation</dt><dd>Routes are versioned under <code>/api/v1</code>. Every Form Request extends a <code>BaseRequest</code> that returns validation errors as one 422 JSON structure. A <code>ResponseHelper</code> trait wraps every response in <code>{status, message, code, data}</code>, and API Resources control exactly which fields leave the server.</dd>
+          <dt>Result</dt><dd>The Vue app can rely on one response shape for every endpoint, and changing a model doesn't accidentally change or leak fields in the API.</dd>
+        </dl>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>What I'd Improve Next</h2>
+    <p class="note">The next steps I've planned for this project.</p>
+    <ul class="check-list">
+      <li><b>Automated tests</b> — PHPUnit feature tests for checkout, likes and authentication.</li>
+      <li><b>Real payment gateway</b> — use the <code class="mono">provider</code>, <code class="mono">mode</code> and <code class="mono">config</code> columns that <code class="mono">payment_methods</code> already has.</li>
+      <li><b>Queued AI calls</b> — run translations as background jobs and store one translation per language.</li>
+      <li><b>Server-side cart</b> — so the cart follows the user across devices.</li>
+      <li><b>Admin &amp; moderation</b> — tools to review posts, comments and sellers.</li>
+      <li><b>Docker &amp; CI</b> — a containerized dev setup and a GitHub Actions pipeline.</li>
+    </ul>
+  </section>
+
+  <div class="pager">
+    <a class="btn btn-outline" href="conceptx.html">← ConceptX case study</a>
+    <a class="btn btn-outline" href="index.html#projects">All projects →</a>
+  </div>
+
+</main>
+
+<footer><div class="container">© 2026 Su Nandi Min · Backend Software Engineer</div></footer>
+
+<script>
+const toggle=document.getElementById('themeToggle');
+const root=document.documentElement;
+function setTheme(t){
+  root.setAttribute('data-theme',t);
+  toggle.textContent=t==='light'?'☀️':'🌙';
+  try{localStorage.setItem('theme',t)}catch(e){}
+}
+let saved=null;
+try{saved=localStorage.getItem('theme')}catch(e){}
+setTheme(saved||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+toggle.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+</script>
+</body>
+</html>

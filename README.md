@@ -1,20 +1,32 @@
 # Su Nandi Min — Portfolio
 
-Personal portfolio website of **Su Nandi Min**, Senior Backend Developer (Laravel / PHP / MySQL).
+Personal portfolio website of **Su Nandi Min**, Backend Software Engineer (PHP · Laravel · MySQL · REST APIs).
+
+Live: https://su-nandi-min-portfolio.vercel.app/
 
 ## Highlights
 
-- 3+ years building production LMS & School Management systems at ConceptX
+- 3+ years building and maintaining the ConceptX production LMS & School Management System (Laravel, PHP, MySQL)
+- Case studies for ConceptX (production) and Dhamma Sphere (personal full-stack: Vue 3 + Laravel 12)
 - NCC Education Level 4 & Level 5 Diplomas in Computing (Distinctions in Agile Development, Data Analysis with Python, Network Security & Cryptography)
-- Skills: Laravel, PHP, MySQL, REST APIs, Vue.js, JavaScript, Git
+
+## Pages
+
+| File | Content |
+| --- | --- |
+| `index.html` | Home: summary, technical highlights, experience, projects, education, contact |
+| `conceptx.html` | ConceptX case study: role, modules, delivery flow, architecture, engineering decisions |
+| `dhamma-sphere.html` | Dhamma Sphere case study: stack, features, database design, API architecture, engineering decisions |
+| `diploma.html` | NCC Level 5 Diploma statement of results |
+| `case-study.css` | Shared styles for the two case-study pages |
 
 ## Tech
 
-Single-page static site — pure HTML/CSS/JS, no build step required.
+Static site — pure HTML/CSS/JS, no build step required. Light/dark theme is stored in `localStorage`.
 
 ## Deploy
 
-Deployed on [Vercel](https://vercel.com). Any static host works: just serve `index.html`.
+Deployed on [Vercel](https://vercel.com). Any static host works: just serve the folder.
 
 ## Contact
 
