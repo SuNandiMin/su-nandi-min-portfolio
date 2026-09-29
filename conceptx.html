@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ConceptX LMS &amp; SMS — Case Study · Su Nandi Min</title>
-<meta name="description" content="Case study: Su Nandi Min's backend work on ConceptX, a production Learning Management and School Management platform built with Laravel, PHP and MySQL.">
+<title>EdOmnis LMS &amp; SMS (ConceptX) — Case Study · Su Nandi Min</title>
+<meta name="description" content="Case study: Su Nandi Min's backend work on EdOmnis by ConceptX, a production Learning Management and School Management platform. Laravel REST API serving a React (Next.js) web app and a React Native mobile app.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case-study.css">
@@ -20,18 +20,18 @@
 </div></nav>
 
 <header class="top"><div class="container">
-  <p class="kicker">Case study · Production project</p>
-  <h1>ConceptX <span class="grad">LMS &amp; School Management System</span></h1>
-  <p class="lede">A production platform that schools use every day for learning, assessment, attendance, administration, inventory and reporting. One Laravel REST API serves a Vue.js web app, a React Native mobile app for guardians and instructors, and an admin panel.</p>
+  <p class="kicker">Case study · Production project · ConceptX</p>
+  <h1>EdOmnis <span class="grad">LMS &amp; School Management System</span></h1>
+  <p class="lede">A production platform that schools use every day for learning, assessment, attendance, administration, inventory and reporting. One Laravel REST API serves the React (Next.js) web app at edomnis.com, a React Native mobile app for guardians and instructors, and an admin panel.</p>
   <div class="btns">
-    <a class="btn btn-primary" href="https://app.conceptxmm.com" target="_blank" rel="noopener">Live platform ↗</a>
+    <a class="btn btn-primary" href="https://edomnis.com" target="_blank" rel="noopener">Live platform ↗</a>
     <a class="btn btn-outline" href="index.html#contact">Discuss this project</a>
   </div>
   <div class="meta-grid">
     <div class="meta"><span>Role</span><b>Backend Developer</b></div>
     <div class="meta"><span>Duration</span><b>Jan 2023 — Present</b></div>
     <div class="meta"><span>Backend</span><b>Laravel · PHP 8 · MySQL · Passport</b></div>
-    <div class="meta"><span>Clients</span><b>Vue.js web · React Native mobile</b></div>
+    <div class="meta"><span>Clients</span><b>React (Next.js) web · React Native mobile</b></div>
   </div>
 </div></header>
 
@@ -49,7 +49,8 @@
   <section>
     <h2>Overview</h2>
     <div class="prose">
-      <p>ConceptX started as a <b>Learning Management System</b> (courses, content, exams) and grew into a full <b>School Management System</b>. I joined in January 2023 and worked on the original Laravel 8 LMS. Since mid-2024 I've worked on its successor, an API-only <b>Laravel 11</b> backend with versioned REST endpoints under <code class="mono">/api/v1</code>.</p>
+      <p>EdOmnis, built by <b>ConceptX</b>, started as a <b>Learning Management System</b> (courses, content, exams) and grew into a full <b>School Management System</b>. I joined in January 2023 and worked on the original Laravel 8 LMS. Since mid-2024 I've worked on its successor, an API-only <b>Laravel 11</b> backend with versioned REST endpoints under <code class="mono">/api/v1</code>.</p>
+      <p>The web client has also been rebuilt: the earlier <b>Vue 3</b> app has been replaced by a new <b>React (Next.js)</b> app, which is the production web app at <a href="https://edomnis.com" target="_blank" rel="noopener">edomnis.com</a>. Both generations of the web app, the mobile app and the admin panel talk to the same versioned API.</p>
       <p>Most of my work is on the backend: turning school requirements into database structures, APIs and permission rules that the web app, the mobile app and the admin panel all share.</p>
     </div>
   </section>
@@ -106,9 +107,10 @@
     <p class="note">A general view of the platform with no confidential details. The same API and authorization rules serve every client.</p>
     <div class="arch">
       <div class="tier"><div class="tier-label">Clients</div><div class="nodes">
-        <div class="node"><b>Web app</b><small>Vue 3 · Vue Router · Vuex · Tailwind CSS</small></div>
+        <div class="node"><b>Web app</b><small>React · Next.js · Tailwind CSS · edomnis.com</small></div>
         <div class="node"><b>Mobile app</b><small>React Native · Expo · TypeScript</small></div>
         <div class="node"><b>Admin panel</b><small>Filament (Laravel)</small></div>
+        <div class="node"><b>Legacy web app</b><small>Vue 3 · Vue Router · Vuex · superseded by the React app</small></div>
       </div></div>
       <div class="arch-link"><div class="spacer"></div><span>HTTPS · JSON · OAuth2 bearer tokens · /api/v1</span></div>
       <div class="tier"><div class="tier-label">Laravel API</div><div class="nodes">
@@ -137,6 +139,7 @@
         <div class="node"><b>Linux server</b><small>Background workers managed by Supervisor</small></div>
       </div></div>
     </div>
+    <p class="arch-caption">The web client moved from a Vue 3 SPA to React (Next.js) on top of the same versioned API, which is why the API contract, authorization rules and response shapes are treated as the stable core of the platform.</p>
   </section>
 
   <section>
@@ -179,7 +182,7 @@
   </section>
 
   <section>
-    <div class="callout">ConceptX is a live commercial product. This page covers my role and the general architecture only: no source code, client data or internal details. The figures above are counted from the codebase I work in.</div>
+    <div class="callout">EdOmnis is a live commercial product of ConceptX. This page covers my role and the general architecture only: no source code, client data or internal details. The figures above are counted from the codebase I work in.</div>
   </section>
 
   <div class="pager">

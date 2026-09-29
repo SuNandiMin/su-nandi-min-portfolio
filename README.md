@@ -6,8 +6,8 @@ Live: https://su-nandi-min-portfolio.vercel.app/
 
 ## Highlights
 
-- 3+ years building and maintaining the ConceptX production LMS & School Management System (Laravel, PHP, MySQL)
-- Case studies for ConceptX (production) and Dhamma Sphere (personal full-stack: Vue 3 + Laravel 12)
+- 3+ years building and maintaining EdOmnis, ConceptX's production LMS & School Management System (Laravel, PHP, MySQL) — one REST API serving the React/Next.js web app at [edomnis.com](https://edomnis.com) and a React Native mobile app
+- Case studies for EdOmnis / ConceptX (production) and Dhamma Sphere (personal full-stack: Vue 3 + Laravel 12)
 - NCC Education Level 4 & Level 5 Diplomas in Computing (Distinctions in Agile Development, Data Analysis with Python, Network Security & Cryptography)
 
 ## Pages
@@ -15,7 +15,7 @@ Live: https://su-nandi-min-portfolio.vercel.app/
 | File | Content |
 | --- | --- |
 | `index.html` | Home: summary, technical highlights, experience, projects, education, contact |
-| `conceptx.html` | ConceptX case study: role, modules, delivery flow, architecture, engineering decisions |
+| `conceptx.html` | EdOmnis (ConceptX) case study: role, modules, delivery flow, architecture, engineering decisions |
 | `dhamma-sphere.html` | Dhamma Sphere case study: stack, features, database design, API architecture, engineering decisions |
 | `diploma.html` | NCC Level 5 Diploma statement of results |
 | `case-study.css` | Shared styles for the two case-study pages |
